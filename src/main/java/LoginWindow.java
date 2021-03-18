@@ -9,7 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class LoginWindow extends JFrame {
+public class LoginWindow extends javax.swing.JFrame {
 
     private JPanel contentPane;
     private JTextField loginField;
@@ -140,30 +140,29 @@ public class LoginWindow extends JFrame {
                     String inpPasword = passwordField.getText();
                     if (dbLogin.equals(inpLogin) && dbPassword.equals(inpPasword)){
                         String role = rs.getString("Role");
+                        System.out.println(role+"!");
                         String name = rs.getString(4);
-                        System.out.println(dbLogin+" "+dbPassword+'1'+role+'1'+name+"!");
                         UserInfo info = new UserInfo(role,name);
                         switch (role) {
                             case "Manager                                                                                                                                                                                                                                                        " -> {
-                                System.out.println("!!!");
                                 new ManagerWindow(info);
                                 dispose();
                             }
-                            case "Р—Р°РєР°Р·С‡РёРє                                                                                                                                                                                                                                                        " -> {
+                            case "Заказчик                                                                                                                                                                                                                                                        " -> {
                                 new CustomerWindow(info);
                                 dispose();
                             }
-                            case "Director                                                                                                                                                                                                                                                        " -> {
+                            case "Director                                                                                                                                                                                                                                                       " -> {
                                 new DirectorWindow(info);
                                 dispose();
                             }
                         }
                     } else {
                         increaceCount();
-                        errorLabel.setText("РќРµРїСЂР°РІРёР»СЊРЅС‹Р№ Р»РѕРіРёРЅ/РїР°СЂРѕР»СЊ");
+                        errorLabel.setText("Неверный пароль и логин");
                     }
                 } catch (SQLException s) {
-                    errorLabel.setText("РќРµРїСЂР°РІРёР»СЊРЅС‹Р№ Р»РѕРіРёРЅ!@РїР°СЂРѕР»СЊ");
+                    errorLabel.setText("Ошибка");
                     increaceCount();
                 }
             }
@@ -184,7 +183,7 @@ public class LoginWindow extends JFrame {
 
     class SwingAction1 extends AbstractAction {
         public SwingAction1() {
-            putValue(NAME, "Р РµРіРёСЃС‚СЂР°С†РёСЏ");
+            putValue(NAME, "Регистрация");
             putValue(SHORT_DESCRIPTION, "Some short description");
         }
 

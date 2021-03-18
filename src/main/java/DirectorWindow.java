@@ -36,6 +36,6 @@ public class DirectorWindow extends JFrame {
         sl_contentPane.putConstraint(SpringLayout.EAST, instrumentsTable, 525, SpringLayout.WEST, contentPane);
         contentPane.add(instrumentsTable);
         instrumentsTable.setBackground(new Color(225,221,215));
-
+        this.setVisible(true);
     }
 }

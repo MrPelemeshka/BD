@@ -1,5 +1,8 @@
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+
+import src.main.java.DataBase;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.sql.ResultSet;

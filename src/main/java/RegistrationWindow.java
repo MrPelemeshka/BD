@@ -102,7 +102,7 @@ public class RegistrationWindow extends JFrame {
         contentPane.add(nameField);
         nameField.setColumns(10);
 
-        JLabel lblNewLabel_3 = new JLabel("Р¤РРћ");
+        JLabel lblNewLabel_3 = new JLabel("Р¤Р?Рћ");
         sl_contentPane.putConstraint(SpringLayout.NORTH, lblNewLabel_3, 6, SpringLayout.SOUTH, passwordField);
         sl_contentPane.putConstraint(SpringLayout.WEST, lblNewLabel_3, 0, SpringLayout.WEST, errorLabel);
         contentPane.add(lblNewLabel_3);
@@ -151,12 +151,12 @@ public class RegistrationWindow extends JFrame {
                     statement.executeUpdate(sql);
                 } catch (SQLException s) {
                     error=false;
-                    errorLabel.setText("РћС€РёР±РєР° РїСЂРё СЂРµРіРёСЃС‚СЂР°С†РёРё");
+                    errorLabel.setText("Ошибка");
                 }
-                if(error)errorLabel.setText("РЈСЃРїРµС€РЅРѕ! Р—Р°РєСЂРѕР№С‚Рµ РѕРєРЅРѕ СЂРµРіРёСЃС‚СЂР°С†РёРё");
+                if(error)errorLabel.setText("Успешно! Закройте окно регистрации");
 
             }
-            else errorLabel.setText("РќРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ РІРІРѕРґ");
+            else errorLabel.setText("Ошибка");
         }
     }
 }
